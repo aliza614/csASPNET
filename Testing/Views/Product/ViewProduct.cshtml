@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Product
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+
+    <tr>
+        <th>ProductID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>On Sale</th>
+        <th>StockLevel</th>
+    </tr>
+    <tr>
+        <th>@Model.ProductID</th>
+        <th>@Model.Name</th>
+        <th>@Model.Price</th>
+        <th>@Model.CategoryID</th>
+        <th>@Model.OnSale</th>
+        <th>@Model.StockLevel</th>
+    </tr>
+
+</table>
