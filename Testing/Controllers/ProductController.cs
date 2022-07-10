@@ -19,7 +19,7 @@ namespace Testing.Controllers
         ///you can open it with localhost:44387/Product
         public IActionResult Index()
         {
-            var products = repo.GetAllProducts();   
+            var products = repo.GetAllProducts();
             return View(products);
         }
 
@@ -31,7 +31,7 @@ namespace Testing.Controllers
 
         public IActionResult UpdateProduct(int id)
         {
-            var product=repo.GetProduct(id);
+            var product = repo.GetProduct(id);
             if (product == null)
             {
                 return View("Product Not Found");
@@ -43,6 +43,17 @@ namespace Testing.Controllers
         {
             repo.UpdateProduct(product);
             return RedirectToAction("ViewProduct", new { id = product.ProductID });
+        }
+
+        public IActionResult InsertProduct()
+        {
+            var prod = repo.AssignCategory();
+            return View(prod);
+        }
+        public IActionResult InsertProductToDatabase(Product product)
+        {
+            repo.InsertProduct(product);
+            return RedirectToAction("Index");
         }
 
     }
