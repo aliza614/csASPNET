@@ -9,6 +9,7 @@ namespace Testing
         public Product GetProduct(int id);
         public void UpdateProduct(Product product);
         public void InsertProduct(Product product);
+        public void DeleteProduct(Product product);
 
         public Product AssignCategory();
         public IEnumerable<Category> GetCategories();
